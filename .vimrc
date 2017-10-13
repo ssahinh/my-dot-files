@@ -11,6 +11,7 @@ set softtabstop=2
 set smarttab
 set expandtab
 set smartcase
+filetype indent on
 
 set t_Co=256
 set background=dark
@@ -44,7 +45,7 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 " Give a shortcut key to NERD Tree
 map <F2> :NERDTreeToggle<CR>
-autocmd VimEnter * NERDTree
+"autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 " Using a non-master branch
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
@@ -59,8 +60,9 @@ Plug 'pangloss/vim-javascript'
 Plug 'elzr/vim-json'
 Plug 'klen/python-mode'
 Plug 'ervandew/supertab'
+Plug 'rip-rip/clang_complete'
 
-let g:nerdtree_tabs_open_on_console_startup=1
+" let g:nerdtree_tabs_open_on_console_startup=1
 
 " Plugin options
 Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
