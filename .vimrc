@@ -15,7 +15,7 @@ filetype indent on
 
 set t_Co=256
 set background=dark
-colorscheme solarized 
+colorscheme delek 
 
 autocmd filetype java nnoremap <F5> :w <bar> !javac % && java -enableassertions %:r <CR>
 autocmd filetype python nnoremap <F5> :w <bar> !python % <CR>
@@ -52,20 +52,15 @@ autocmd VimEnter * wincmd p
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 
 " Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
-Plug 'fatih/vim-go', { 'tag': '*' }
 Plug 'scrooloose/syntastic'
 Plug 'kien/ctrlp.vim'
 Plug 'bling/vim-airline'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'pangloss/vim-javascript'
-Plug 'elzr/vim-json'
 Plug 'klen/python-mode'
 Plug 'ervandew/supertab'
 Plug 'rip-rip/clang_complete'
-Plug 'dracula/vim'
 Plug 'altercation/vim-colors-solarized'
-Plug 'severin-lemaignan/vim-minimap'
-Plug 'shawncplus/phpcomplete.vim'
 " let g:nerdtree_tabs_open_on_console_startup=1
 
 " Plugin options
