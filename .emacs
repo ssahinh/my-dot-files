@@ -25,7 +25,7 @@
  '(custom-enabled-themes (quote (cyberpunk)))
  '(custom-safe-themes
    (quote
-    ("4ee4a855548a7a966fe8722401441499b0d8b2fcf3d12438f81e016b6efed0e6" "90ea0413ad77ae560f150de2e3888da4a2088590209705306156a307899a37ec" "11878ac0a75f25057b217f74d9098adbd893dc1374da94d81f715b70f4efa00b" "ed2b5df51c3e1f99207074f8a80beeb61757ab18970e43d57dec34fe21af2433" "8a6f10b3269c42c351776ee32c7ee755472dee4ecdf2177dcbf64d5e02d1ab64" "ce0788113995714fd96970417e8e71d5182d02bc40cc7ffef307f5e01e55942f" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "d411730c6ed8440b4a2b92948d997c4b71332acf9bb13b31e9445da16445fe43" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" "82d2cac368ccdec2fcc7573f24c3f79654b78bf133096f9b40c20d97ec1d8016" "6de7c03d614033c0403657409313d5f01202361e35490a3404e33e46663c2596" "ed317c0a3387be628a48c4bbdb316b4fa645a414838149069210b66dd521733f" "938d8c186c4cb9ec4a8d8bc159285e0d0f07bad46edf20aa469a89d0d2a586ea" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "d6922c974e8a78378eacb01414183ce32bc8dbf2de78aabcc6ad8172547cb074" "8ed752276957903a270c797c4ab52931199806ccd9f0c3bb77f6f4b9e71b9272" default)))
+    ("4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "4ee4a855548a7a966fe8722401441499b0d8b2fcf3d12438f81e016b6efed0e6" "90ea0413ad77ae560f150de2e3888da4a2088590209705306156a307899a37ec" "11878ac0a75f25057b217f74d9098adbd893dc1374da94d81f715b70f4efa00b" "ed2b5df51c3e1f99207074f8a80beeb61757ab18970e43d57dec34fe21af2433" "8a6f10b3269c42c351776ee32c7ee755472dee4ecdf2177dcbf64d5e02d1ab64" "ce0788113995714fd96970417e8e71d5182d02bc40cc7ffef307f5e01e55942f" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "d411730c6ed8440b4a2b92948d997c4b71332acf9bb13b31e9445da16445fe43" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" "82d2cac368ccdec2fcc7573f24c3f79654b78bf133096f9b40c20d97ec1d8016" "6de7c03d614033c0403657409313d5f01202361e35490a3404e33e46663c2596" "ed317c0a3387be628a48c4bbdb316b4fa645a414838149069210b66dd521733f" "938d8c186c4cb9ec4a8d8bc159285e0d0f07bad46edf20aa469a89d0d2a586ea" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "d6922c974e8a78378eacb01414183ce32bc8dbf2de78aabcc6ad8172547cb074" "8ed752276957903a270c797c4ab52931199806ccd9f0c3bb77f6f4b9e71b9272" default)))
  '(fci-rule-color "#383838")
  '(flycheck-color-mode-line-face-to-color (quote mode-line-buffer-id))
  '(highlight-changes-colors (quote ("#FD5FF0" "#AE81FF")))
@@ -57,7 +57,7 @@
     ("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4")))
  '(package-selected-packages
    (quote
-    (auto-complete-c-headers color-theme-sanityinc-tomorrow ac-html ample-theme tabbar php-mode solarized-theme helm-ctest spacemacs-theme helm disaster irony-eldoc irony swiper ivy cyberpunk-theme tagedit neotree projectile yasnippet flycheck auto-complete monokai-theme)))
+    (crosshairs auto-complete-clang-async auto-complete-clang ac-c-headers auto-complete-c-headers color-theme-sanityinc-tomorrow ac-html ample-theme tabbar php-mode solarized-theme helm-ctest spacemacs-theme helm disaster irony-eldoc irony swiper ivy cyberpunk-theme tagedit neotree projectile yasnippet flycheck auto-complete monokai-theme)))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#eee8d5" 0.2))
@@ -103,7 +103,7 @@
 ;; spacemacs theme
 ;; (load-theme 'spacemacs-theme t)
 ;;monokai theme
-(load-theme 'ample t t)
+;;(load-theme 'ample t t)
 ;; toolbar
 ;;(tool-bar-mode -1)
 ;; autocomplete
@@ -150,16 +150,16 @@
       (setq initial-frame-alist
             '(
               (tool-bar-lines . 0)
-              (width . 106) ; chars
-              (height . 60) ; lines
+              (width . 86) ; chars
+              (height . 50) ; lines
                             ;;
               ))
 
       (setq default-frame-alist
             '(
               (tool-bar-lines . 0)
-              (width . 106)
-              (height . 60)
+              (width . 86)
+              (height . 50)
                             ;;
               )))
   (progn
@@ -226,7 +226,7 @@ Emacs buffer are those starting with “*”."
 ;; spacemacs theme
 ;; (load-theme 'spacemacs-theme t)
 ;;monokai theme
-(load-theme 'ample t t)
+;;(load-theme 'ample t t)
 ;; toolbar
 ;;(tool-bar-mode -1)
 ;; autocomplete
@@ -346,11 +346,18 @@ Emacs buffer are those starting with “*”."
 (set-face-attribute 'default nil :height 120)
 
 ;; lets define a function which initialization auto-complete-c-headers and gets called for c/c++ hooks
-(defun my:ac-c-headers()
-  (require 'auto-complete-c-headers)
+(require 'auto-complete-c-headers)
   (add-to-list 'ac-sources 'ac-source-c-headers)
-  (add-to-list 'achead:include-directories '"/usr/include"))
-
+  (setq achead:include-directories
+   (append '("/usr/include/c++/7.2.1")
+             achead:include-directories))
 ;; now lets call this function from c/c++ hooks
 (add-hook 'c++-mode-hook 'my:ac-c-header-init)
 (add-hook 'c-mode-hook 'my:ac-c-header-init)
+
+;; php-mode
+(eval-after-load 'php-mode
+  '(require 'php-ext))
+
+;; crosshairs mode
+(crosshairs-mode t)
