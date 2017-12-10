@@ -11,11 +11,13 @@ set softtabstop=2
 set smarttab
 set expandtab
 set smartcase
+set cursorline
+set cursorcolumn
 filetype indent on
 
 set t_Co=256
 set background=dark
-colorscheme delek 
+colorscheme tomorrow 
 
 autocmd filetype java nnoremap <F5> :w <bar> !javac % && java -enableassertions %:r <CR>
 autocmd filetype python nnoremap <F5> :w <bar> !python % <CR>
@@ -45,7 +47,6 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 " Give a shortcut key to NERD Tree
 map <F2> :NERDTreeToggle<CR>
-map <F3> :Minimap<CR>
 "autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 " Using a non-master branch
@@ -61,6 +62,7 @@ Plug 'klen/python-mode'
 Plug 'ervandew/supertab'
 Plug 'rip-rip/clang_complete'
 Plug 'altercation/vim-colors-solarized'
+Plug 'bronson/vim-crosshairs'
 " let g:nerdtree_tabs_open_on_console_startup=1
 
 " Plugin options
