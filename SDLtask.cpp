@@ -3,128 +3,88 @@ Compile command:
 g++ -o test main.cpp -lSDLmain -lSDL -lGL
  */
  
-// specific headers
-#include "SDL/SDL.h"
-#include "SDL/SDL_opengl.h"
+#include <SDL2/SDL.h>
 #include <iostream>
- 
-//start of the program
-int main( int argc, char* args[] )
+
+// screen dimension constants
+const int SCREEN_WIDTH = 640;
+const int SCREEN_HEIGHT = 480;
+
+SDL_Window* gWindow = NULL;
+SDL_Renderer* gRenderer = NULL;
+
+// initialize sdl
+bool init()
 {
-  //initialize SDL
-  SDL_Init(SDL_INIT_EVERYTHING);
- 
-  //Set OpenGL memory usage
-  SDL_GL_SetAttribute( SDL_GL_RED_SIZE, 8 );
-  SDL_GL_SetAttribute( SDL_GL_GREEN_SIZE, 8);
-  SDL_GL_SetAttribute( SDL_GL_BLUE_SIZE, 8 );
-  SDL_GL_SetAttribute( SDL_GL_ALPHA_SIZE, 8);
-  SDL_GL_SetAttribute( SDL_GL_BUFFER_SIZE, 32);
-  SDL_GL_SetAttribute( SDL_GL_DEPTH_SIZE, 16 );
-  SDL_GL_SetAttribute( SDL_GL_DOUBLEBUFFER, 1 );
- 
- 
-  //Caption of the window
-  SDL_WM_SetCaption( "Our first game", NULL );
- 
-  //Size of the window
-  SDL_SetVideoMode(600,400,32, SDL_OPENGL );
- 
-  //Specific the clear color
-  glClearColor(1,1,1,1); //RED,GREEN,BLUE,ALPHA
- 
-  //What portion of the screen we will display
-  glViewport(0,0,600,400);
- 
-  //Shader model - Use this
-  glShadeModel(GL_SMOOTH);
- 
-  //2D rendering
-  glMatrixMode(GL_PROJECTION);
- 
-  //"Save" it
-  glLoadIdentity();
- 
-  //Disable depth checking
-  glDisable(GL_DEPTH_TEST);
- 
-  std::cout << "OpenGL is running\n";
-  std::cout << "Main loop has started\n";
- 
-  //Handles the main loop
-  bool isRunning = true;
- 
-  //For handling with event
-  SDL_Event event;
- 
-  //Main game loop
-  while ( isRunning )
-    {
-      //EVENTS
-      while ( SDL_PollEvent(&event) )
-        {
-          //if the window was closed
-          if ( event.type == SDL_QUIT )
-            {
-              isRunning = false;
-            }
- 
-          //If a button was released and the button is escape
-          if ( event.type == SDL_KEYUP && event.key.keysym.sym == SDLK_ESCAPE )
-            {
-              isRunning = false;
-            }
- 
-          if ( event.type == SDL_KEYUP && event.key.keysym.sym == SDLK_r )
-            {
-              glClearColor(1,0,0,1);
-            }
-          //logic that should happen for a certain event
-        }
- 
-      //LOGIC
- 
-      //RENDERING to the screen
-      glClear(GL_COLOR_BUFFER_BIT);
- 
-      glPushMatrix(); //Start rendering phase
- 
-      glOrtho(0,600,400,0,-1,1); //Set the matrix
- 
-      glColor4ub(255,0,0,255); //Red color
- 
-      glBegin(GL_QUADS); //GL_POINTS, GL_LINES, GL_LINE_STRIP, GL_LINE_LOOP, GL_QUADS, GL_TRIANGLES, GL_POLIGON
- 
-      glVertex2f(5,5); //top left corner
-      glVertex2f(595,5); //upper right corner
- 
-      glColor4ub(0,255,0,255); //green color
- 
-      glVertex2f(595,395); //down right corner
-      glVertex2f(5,395); //down left corner
- 
-      glEnd(); //End drawing
- 
-      glColor4ub(0,0,0,255); //Black color
- 
-      glBegin(GL_LINES); //draw lines
- 
-      //First line
-      glVertex2f(5,5);
-      glVertex2f(595,395);
- 
-      //Second line
-      glVertex2f(595,5);
-      glVertex2f(5,395);
- 
-      glEnd(); //SEnd drawing
- 
-      glPopMatrix(); //End rendering phase
- 
-      SDL_GL_SwapBuffers();
+    // result of initialization
+    bool success = true;
+    
+    // Intialize SDL
+    if (SDL_Init(SDL_INIT_VIDEO) < 0) {
+        std::cout << "SDL could not initialize! error: " << SDL_GetError() << "\n";
+        success = false;
     }
- 
-  SDL_Quit();
- 
-  return 0;
+    else {
+        // create window
+        gWindow = SDL_CreateWindow("SDL Skeleton", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
+        if (gWindow == NULL) {
+            std::cout << "Window could not be created! error: " << SDL_GetError() << "\n";
+            success =false;
+        }
+        else {
+            // create renderer for window
+            gRenderer = SDL_CreateRenderer(gWindow, -1, SDL_RENDERER_ACCELERATED);
+            if (gRenderer == NULL) {
+                std::cout << "Renderer could not be created. error: " << SDL_GetError() << "\n";
+                success =false;
+            }
+            else {
+                SDL_SetRenderDrawColor(gRenderer, 0xff, 0xff, 0xff, 0xff);
+            }
+        }
+    }
+    
+    return success;
+}
+
+void close()
+{
+    SDL_DestroyRenderer(gRenderer);
+    SDL_DestroyWindow(gWindow);
+    gRenderer = NULL;
+    gWindow = NULL;
+
+    SDL_Quit();
+}
+
+int main(int argc, const char* argv[])
+{
+    if (!init()) {
+        std::cout << "Failed to initialize!\n";
+    }
+    else {
+        bool quit = false;
+
+        SDL_Event e;
+
+        while (!quit) {
+           // handle event on queue
+           while (SDL_PollEvent(&e) != 0) {
+               // user request to quit
+               if (e.type == SDL_QUIT) {
+                   quit = true;
+               }
+
+               // clear screen
+               SDL_RenderClear(gRenderer);
+
+               // update screen
+               SDL_RenderPresent(gRenderer);
+           }
+        }
+    }
+    
+    close();
+    
+    return 0;
 }
