@@ -280,9 +280,8 @@ Emacs buffer are those starting with “*”."
 (set-language-environment "UTF-8")
 ;; run function for fast compile
 (defun run ()
-  "Compiling my c++ program"
+  "Compiling and running my code"
   (interactive)
-  (shell-command "make")
-  (shell-command "./trickster"))
+  (shell-command "./run.sh"))
 
 (global-set-key (kbd "<f5>") 'run);
