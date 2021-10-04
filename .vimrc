@@ -1,5 +1,3 @@
-" my vim configurations
-autocmd filetype cpp nnoremap <F5> :w <bar> !g++-4.8 -ulimit -Wall -Wno-unused-result -std=c++11   -O2   % -o %:r && ./%:r <CR>
 syntax on
 set nu
 set clipboard=unnamedplus
@@ -11,18 +9,18 @@ set softtabstop=2
 set smarttab
 set expandtab
 set smartcase
-set cursorline
-set cursorcolumn
 filetype indent on
 
 set t_Co=256
 set background=dark
-colorscheme tomorrow 
+colorscheme gruvbox
 
 autocmd filetype java nnoremap <F5> :w <bar> !javac % && java -enableassertions %:r <CR>
 autocmd filetype python nnoremap <F5> :w <bar> !python % <CR>
 autocmd filetype perl nnoremap <F5> :w <bar> !perl % <CR>
 autocmd filetype go nnoremap <F5> :w <bar> !go build % && ./%:r <CR>
+"my settings end
+
 "my settings end
 
 " vim plug configuration
@@ -57,22 +55,19 @@ Plug 'scrooloose/syntastic'
 Plug 'kien/ctrlp.vim'
 Plug 'bling/vim-airline'
 Plug 'jistr/vim-nerdtree-tabs'
-Plug 'pangloss/vim-javascript'
-Plug 'klen/python-mode'
 Plug 'ervandew/supertab'
 Plug 'rip-rip/clang_complete'
-Plug 'altercation/vim-colors-solarized'
 Plug 'bronson/vim-crosshairs'
 " let g:nerdtree_tabs_open_on_console_startup=1
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " Plugin options
 Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
 
 " Plugin outside ~/.vim/plugged with post-update hook
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-
-" Unmanaged plugin (manually installed and updated)
-Plug '~/my-prototype-plugin'
+Plug 'morhetz/gruvbox'
+Plug 'mxw/vim-jsx'
 
 " Initialize plugin system
 call plug#end()
