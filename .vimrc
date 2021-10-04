@@ -19,9 +19,6 @@ autocmd filetype java nnoremap <F5> :w <bar> !javac % && java -enableassertions 
 autocmd filetype python nnoremap <F5> :w <bar> !python % <CR>
 autocmd filetype perl nnoremap <F5> :w <bar> !perl % <CR>
 autocmd filetype go nnoremap <F5> :w <bar> !go build % && ./%:r <CR>
-"my settings end
-
-"my settings end
 
 " vim plug configuration
 " Specify a directory for plugins
